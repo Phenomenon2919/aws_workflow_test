@@ -64,7 +64,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: ap-south-1
       - name: Upload to S3
-        run: aws s3 cp deploy_package.zip s3://githubactionbucket01/${{ github.repository }}/deployment.zip  
+        run: aws s3 cp deployment.zip s3://githubactionbucket01/${{ github.repository }}/deployment.zip  
         
   Test:
     runs-on: ubuntu-latest
