@@ -85,7 +85,7 @@ jobs:
               --code S3Bucket=githubactionbucket01,S3Key=${{ github.repository }}/deployment.zip \
               --handler test_lambda_function.lambda_handler --runtime python3.8 \
               --role arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/LambdaTestingRole
-      - name: Invoke test function 
+      - name: Invoking test function 
         run: |
             aws lambda invoke --function-name lambda-test-function-${{ matrix.input }} \
               --payload $(echo "{\"input\": \"${{ matrix.input }}\"}" | base64) \
